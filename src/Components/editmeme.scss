@@ -1,0 +1,37 @@
+.edit_meme{
+  position: fixed;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  // margin: auto;
+  top: 2rem;
+  left: 10rem;
+   
+  img{
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  label{
+    background-color: transparent;
+    color: black;
+    font-weight: bolder;
+  }
+  button{
+    min-width: 4rem;
+    margin: 0.2rem 1rem;
+
+    &:hover{
+
+      background: #434343;
+	    letter-spacing: 1px;
+	    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	    transition: all 0.4s ease 0s;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.block{
+  display:flex;
+  width:100vw;
+  height:auto;
+  text-align:center;
+}
+.left-p{
+  flex:1;
+  min-width: 70vw;
+  background: linear-gradient(35deg, #CCFFFF, #FFCCCC, rgb(204, 204, 255));
+}
+.right-p{
+  flex:1;
+  background:#4A4A4A;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #FFCCCC,#CCFFFF, rgb(204, 204, 255));
+
+  p{
+    font-size: 2rem;
+    color: black;
+  }
+
+}
