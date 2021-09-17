@@ -5,7 +5,6 @@ import MemeBox from './MemeBox'
 export default function MemeContainer() {
   const {state} = useContext(UserContext)
   const memeboxes = state.map(meme => {
-    console.log(meme)
     return <MemeBox 
     key = {meme.id}
     {...meme}

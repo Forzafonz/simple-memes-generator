@@ -5,6 +5,9 @@ import { UserContext } from './hooks/userContext';
 import axios from "axios";
 
 const INITIALIZE = "initialize";
+const EDIT = "edit"
+
+
 function reducer(state, action) {
 
   const initialize = (input) => {
@@ -18,11 +21,27 @@ function reducer(state, action) {
     return [...newInput];
   }
 
-  const actions = {
-    [INITIALIZE]: initialize
+  const edit = (input) => {
+    console.log("oldInput:", state)
+    const id = input.id
+    const newState = [...state]
+    const newInput = newState.map(item => {
+      let selected = 0;
+      if (item.id === id) {
+        selected = 1;
+      }
+      return {...item, selected}
+    })
+    console.log("newInput", newInput)
+    return newInput;
   }
 
-  return actions[action.type](action.state)
+  const actions = {
+    [INITIALIZE]: initialize,
+    [EDIT]: edit
+  }
+
+  return actions[action.type](action.value)
 
 }
 
@@ -33,7 +52,7 @@ function App() {
   useEffect(() => {
     axios.get("https://api.imgflip.com/get_memes")
       .then(result => {
-        dispatch({ type: INITIALIZE, state: result.data.data.memes })
+        dispatch({ type: INITIALIZE, value : result.data.data.memes })
       })
   }, [])
   return (
