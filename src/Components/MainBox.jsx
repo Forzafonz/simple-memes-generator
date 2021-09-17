@@ -7,7 +7,7 @@ import './mainBox.scss'
 export default function MainBox() {
   return (
     <div className = "block">
-        <EditMeme />
+        <EditMeme/>
         <MemeContainer />
     </div>
   )
